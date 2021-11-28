@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIForm", "UIForm\UIForm.csproj", "{0E4666DC-8DCF-48E0-8343-25CB0EC2D0B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackerLibrary", "TrackerLibrary\TrackerLibrary.csproj", "{037C271F-4A05-4E6B-870D-E25A4E7A5439}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E4666DC-8DCF-48E0-8343-25CB0EC2D0B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E4666DC-8DCF-48E0-8343-25CB0EC2D0B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E4666DC-8DCF-48E0-8343-25CB0EC2D0B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E4666DC-8DCF-48E0-8343-25CB0EC2D0B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{037C271F-4A05-4E6B-870D-E25A4E7A5439}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{037C271F-4A05-4E6B-870D-E25A4E7A5439}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{037C271F-4A05-4E6B-870D-E25A4E7A5439}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{037C271F-4A05-4E6B-870D-E25A4E7A5439}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8FCBB043-3AFE-4E4D-A8E3-3A399A5BB371}
+	EndGlobalSection
+EndGlobal
