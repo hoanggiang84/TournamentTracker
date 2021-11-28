@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PrizeCreator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrizeCreator.Designer.cs">
+      <DependentUpon>PrizeCreator.cs</DependentUpon>
+    </Compile>
     <Compile Include="TeamCreator.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,9 @@
     <Compile Include="TournamentViewer.Designer.cs">
       <DependentUpon>TournamentViewer.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="PrizeCreator.resx">
+      <DependentUpon>PrizeCreator.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
