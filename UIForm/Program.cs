@@ -13,7 +13,7 @@ namespace UIForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TeamCreator());
+            Application.Run(new TournamentDashboard());
         }
     }
 }

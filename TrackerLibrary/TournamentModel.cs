@@ -12,7 +12,7 @@ namespace TrackerLibrary
 
         public decimal  EntryFee { get; set; }
 
-        public List<TeamModel> EnteredTeam { get; set; } = new List<TeamModel>();
+        public List<TeamModel> EnteredTeams { get; set; } = new List<TeamModel>();
 
         public List<PrizeModel> Prizes { get; set; } = new List<PrizeModel>();
 
