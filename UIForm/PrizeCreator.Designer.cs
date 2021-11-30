@@ -36,7 +36,7 @@ namespace UIForm
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxPlaceNumber = new System.Windows.Forms.TextBox();
-            this.textBoxPrizeName = new System.Windows.Forms.TextBox();
+            this.textBoxPlaceName = new System.Windows.Forms.TextBox();
             this.textBoxPrizeAmount = new System.Windows.Forms.TextBox();
             this.textBoxPrizePercentage = new System.Windows.Forms.TextBox();
             this.radioButtonAmount = new System.Windows.Forms.RadioButton();
@@ -59,7 +59,7 @@ namespace UIForm
             this.tableLayoutPanelMain.Controls.Add(this.label4, 1, 4);
             this.tableLayoutPanelMain.Controls.Add(this.label5, 1, 5);
             this.tableLayoutPanelMain.Controls.Add(this.textBoxPlaceNumber, 2, 2);
-            this.tableLayoutPanelMain.Controls.Add(this.textBoxPrizeName, 2, 3);
+            this.tableLayoutPanelMain.Controls.Add(this.textBoxPlaceName, 2, 3);
             this.tableLayoutPanelMain.Controls.Add(this.textBoxPrizeAmount, 2, 4);
             this.tableLayoutPanelMain.Controls.Add(this.textBoxPrizePercentage, 2, 5);
             this.tableLayoutPanelMain.Controls.Add(this.radioButtonAmount, 3, 4);
@@ -93,9 +93,10 @@ namespace UIForm
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(23, 100);
+            this.label2.Location = new System.Drawing.Point(23, 113);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(131, 24);
             this.label2.TabIndex = 1;
@@ -103,9 +104,10 @@ namespace UIForm
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(23, 150);
+            this.label3.Location = new System.Drawing.Point(23, 163);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(113, 24);
             this.label3.TabIndex = 2;
@@ -113,9 +115,10 @@ namespace UIForm
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(23, 200);
+            this.label4.Location = new System.Drawing.Point(23, 213);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(123, 24);
             this.label4.TabIndex = 3;
@@ -123,9 +126,10 @@ namespace UIForm
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(23, 250);
+            this.label5.Location = new System.Drawing.Point(23, 263);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(154, 24);
             this.label5.TabIndex = 4;
@@ -133,66 +137,79 @@ namespace UIForm
             // 
             // textBoxPlaceNumber
             // 
+            this.textBoxPlaceNumber.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.textBoxPlaceNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPlaceNumber.Location = new System.Drawing.Point(223, 103);
+            this.textBoxPlaceNumber.Location = new System.Drawing.Point(223, 111);
             this.textBoxPlaceNumber.Name = "textBoxPlaceNumber";
             this.textBoxPlaceNumber.Size = new System.Drawing.Size(130, 28);
             this.textBoxPlaceNumber.TabIndex = 5;
             // 
-            // textBoxPrizeName
+            // textBoxPlaceName
             // 
-            this.textBoxPrizeName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPrizeName.Location = new System.Drawing.Point(223, 153);
-            this.textBoxPrizeName.Name = "textBoxPrizeName";
-            this.textBoxPrizeName.Size = new System.Drawing.Size(130, 28);
-            this.textBoxPrizeName.TabIndex = 6;
+            this.textBoxPlaceName.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBoxPlaceName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPlaceName.Location = new System.Drawing.Point(223, 161);
+            this.textBoxPlaceName.Name = "textBoxPlaceName";
+            this.textBoxPlaceName.Size = new System.Drawing.Size(130, 28);
+            this.textBoxPlaceName.TabIndex = 6;
             // 
             // textBoxPrizeAmount
             // 
+            this.textBoxPrizeAmount.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBoxPrizeAmount.Enabled = false;
             this.textBoxPrizeAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPrizeAmount.Location = new System.Drawing.Point(223, 203);
+            this.textBoxPrizeAmount.Location = new System.Drawing.Point(223, 211);
             this.textBoxPrizeAmount.Name = "textBoxPrizeAmount";
             this.textBoxPrizeAmount.Size = new System.Drawing.Size(130, 28);
             this.textBoxPrizeAmount.TabIndex = 7;
+            this.textBoxPrizeAmount.Text = "0.0";
             // 
             // textBoxPrizePercentage
             // 
+            this.textBoxPrizePercentage.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.textBoxPrizePercentage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPrizePercentage.Location = new System.Drawing.Point(223, 253);
+            this.textBoxPrizePercentage.Location = new System.Drawing.Point(223, 261);
             this.textBoxPrizePercentage.Name = "textBoxPrizePercentage";
             this.textBoxPrizePercentage.Size = new System.Drawing.Size(130, 28);
             this.textBoxPrizePercentage.TabIndex = 8;
+            this.textBoxPrizePercentage.Text = "0.0";
             // 
             // radioButtonAmount
             // 
-            this.radioButtonAmount.Checked = true;
+            this.radioButtonAmount.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.radioButtonAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonAmount.Location = new System.Drawing.Point(423, 203);
+            this.radioButtonAmount.Location = new System.Drawing.Point(423, 215);
             this.radioButtonAmount.Name = "radioButtonAmount";
             this.radioButtonAmount.Size = new System.Drawing.Size(20, 20);
             this.radioButtonAmount.TabIndex = 9;
-            this.radioButtonAmount.TabStop = true;
             this.radioButtonAmount.UseVisualStyleBackColor = true;
+            this.radioButtonAmount.CheckedChanged += new System.EventHandler(this.radioButtonAmount_CheckedChanged);
             // 
             // radioButtonPercentage
             // 
-            this.radioButtonPercentage.Location = new System.Drawing.Point(423, 253);
+            this.radioButtonPercentage.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.radioButtonPercentage.Checked = true;
+            this.radioButtonPercentage.Location = new System.Drawing.Point(423, 265);
             this.radioButtonPercentage.Name = "radioButtonPercentage";
             this.radioButtonPercentage.Size = new System.Drawing.Size(20, 20);
             this.radioButtonPercentage.TabIndex = 10;
+            this.radioButtonPercentage.TabStop = true;
             this.radioButtonPercentage.UseVisualStyleBackColor = true;
+            this.radioButtonPercentage.CheckedChanged += new System.EventHandler(this.radioButtonPercentage_CheckedChanged);
             // 
             // buttonCreatePrize
             // 
+            this.buttonCreatePrize.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tableLayoutPanelMain.SetColumnSpan(this.buttonCreatePrize, 2);
             this.buttonCreatePrize.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCreatePrize.Location = new System.Drawing.Point(130, 303);
+            this.buttonCreatePrize.Location = new System.Drawing.Point(183, 311);
             this.buttonCreatePrize.Margin = new System.Windows.Forms.Padding(110, 3, 3, 3);
             this.buttonCreatePrize.Name = "buttonCreatePrize";
             this.buttonCreatePrize.Size = new System.Drawing.Size(180, 40);
             this.buttonCreatePrize.TabIndex = 11;
             this.buttonCreatePrize.Text = "Create Prize";
             this.buttonCreatePrize.UseVisualStyleBackColor = true;
+            this.buttonCreatePrize.Click += new System.EventHandler(this.buttonCreatePrize_Click);
             // 
             // PrizeCreator
             // 
@@ -217,7 +234,7 @@ namespace UIForm
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBoxPlaceNumber;
-        private System.Windows.Forms.TextBox textBoxPrizeName;
+        private System.Windows.Forms.TextBox textBoxPlaceName;
         private System.Windows.Forms.TextBox textBoxPrizeAmount;
         private System.Windows.Forms.TextBox textBoxPrizePercentage;
         private System.Windows.Forms.RadioButton radioButtonAmount;

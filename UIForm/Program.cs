@@ -13,7 +13,12 @@ namespace UIForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TournamentDashboard());
+
+            // Initialzie the database connection
+            TrackerLibrary.GlobalConfig.InitializeConnections(true, true);
+
+            //Application.Run(new TournamentDashboard());
+            Application.Run(new PrizeCreator());
         }
     }
 }
