@@ -9,7 +9,7 @@ using TrackerLibrary.Models;
 
 namespace TrackerLibrary.DataAccess
 {
-    public class SqlConnection : IDataConnection
+    public class SqlConnector : IDataConnection
     {
         /// <summary>
         /// Save a new prize to database
@@ -18,7 +18,7 @@ namespace TrackerLibrary.DataAccess
         /// <returns>The prize information, including the unique identifier</returns>
         public PrizeModel CreatePrize(PrizeModel model)
         {
-            // TODO: save prize information to the database
+            // Save prize information to the database
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString("Tournaments")))
             {
                 var p = new DynamicParameters();
