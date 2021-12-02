@@ -19,7 +19,7 @@ namespace UIForm
             GlobalConfig.InitializeConnections(DatabaseType.TextFile);
 
             //Application.Run(new TournamentDashboard());
-            Application.Run(new PrizeCreator());
+            Application.Run(new TeamCreator());
         }
     }
 }

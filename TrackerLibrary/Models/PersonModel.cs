@@ -5,6 +5,7 @@
         public string  FirstName { get; set; }
         public string  LastName { get; set; }
         public string  EmailAddress { get; set; }
-        public string  CellPhoneNumber { get; set; }
+        public string  CellphoneNumber { get; set; }
+        public int Id { get; internal set; }
     }
 }
