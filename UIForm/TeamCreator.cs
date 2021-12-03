@@ -15,14 +15,35 @@ namespace UIForm
 
     public partial class TeamCreator : Form
     {
-        private List<PersonModel> availableTeamMembers = new List<PersonModel>();
-        private List<PersonModel> selectedTeamMebers = new List<PersonModel>();  
+        private List<PersonModel> availableTeamMembers = GlobalConfig.Connection.GetAllPersons();
+        private List<PersonModel> selectedTeamMembers = new List<PersonModel>();  
 
         public TeamCreator()
         {
             InitializeComponent();
+            //CreateSampleData();
+            wireUpLists();
         }
 
+        private void CreateSampleData()
+        {
+            availableTeamMembers.Add(new PersonModel { FirstName = "Tim", LastName = "Corey" });
+            availableTeamMembers.Add(new PersonModel { FirstName = "Giang", LastName = "Hoang" });
+
+            selectedTeamMembers.Add(new PersonModel { FirstName = "Jane", LastName = "Smith" });
+            selectedTeamMembers.Add(new PersonModel { FirstName = "Bill", LastName = "Jones" });
+        }
+
+        private void wireUpLists()
+        {
+            comboBoxTeamMember.DataSource = null;
+            comboBoxTeamMember.DataSource = availableTeamMembers;
+            comboBoxTeamMember.DisplayMember = "FullName";
+
+            listBoxTournamentPlayers.DataSource = null;
+            listBoxTournamentPlayers.DataSource = selectedTeamMembers;
+            listBoxTournamentPlayers.DisplayMember = "FullName";
+        }
         private void buttonCreateMember_Click(object sender, EventArgs e)
         {
             if (ValidateForm())
@@ -33,8 +54,9 @@ namespace UIForm
                 p.EmailAddress = textBoxNewMemberEmail.Text;
                 p.CellphoneNumber = textBoxNewMemberPhoneNumber.Text;
 
-                GlobalConfig.Connection.CreatePerson(p);
-
+                p = GlobalConfig.Connection.CreatePerson(p);
+                selectedTeamMembers.Add(p);
+                wireUpLists();
                 textBoxNewMemberFirstName.Clear();
                 textBoxNewMemberLastName.Clear();
                 textBoxNewMemberEmail.Clear();
@@ -70,6 +92,39 @@ namespace UIForm
             }
 
             return true;
+        }
+
+        private void buttonAddMember_Click(object sender, EventArgs e)
+        {
+            PersonModel p = (PersonModel)comboBoxTeamMember.SelectedItem;
+            
+            if (p != null)
+            {
+                availableTeamMembers.Remove(p);
+                selectedTeamMembers.Add(p);
+                wireUpLists(); 
+            }
+        }
+
+        private void buttonRemoveSelectedPlayer_Click(object sender, EventArgs e)
+        {
+            PersonModel p = (PersonModel)listBoxTournamentPlayers.SelectedItem;
+
+            if (p != null)
+            {
+                availableTeamMembers.Add(p);
+                selectedTeamMembers.Remove(p);
+                wireUpLists(); 
+            }
+        }
+
+        private void buttonCreateTeam_Click(object sender, EventArgs e)
+        {
+            TeamModel t = new TeamModel();
+            t.Name = textBoxTeamName.Text;
+            t.TeamMembers = selectedTeamMembers;
+            GlobalConfig.Connection.CreateTeam(t);
+                
         }
     }
 }

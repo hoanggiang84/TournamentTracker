@@ -31,7 +31,7 @@
             this.layoutMain = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonCreateMember = new System.Windows.Forms.Button();
-            this.buttonDeleteSelectedPlayer = new System.Windows.Forms.Button();
+            this.buttonRemoveSelectedPlayer = new System.Windows.Forms.Button();
             this.buttonCreateTeam = new System.Windows.Forms.Button();
             this.listBoxTournamentPlayers = new System.Windows.Forms.ListBox();
             this.layoutCreateTeam = new System.Windows.Forms.TableLayoutPanel();
@@ -65,7 +65,7 @@
             this.layoutMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.layoutMain.Controls.Add(this.label1, 1, 1);
             this.layoutMain.Controls.Add(this.buttonCreateMember, 1, 3);
-            this.layoutMain.Controls.Add(this.buttonDeleteSelectedPlayer, 2, 3);
+            this.layoutMain.Controls.Add(this.buttonRemoveSelectedPlayer, 2, 3);
             this.layoutMain.Controls.Add(this.buttonCreateTeam, 1, 4);
             this.layoutMain.Controls.Add(this.listBoxTournamentPlayers, 2, 2);
             this.layoutMain.Controls.Add(this.layoutCreateTeam, 1, 2);
@@ -108,23 +108,24 @@
             this.buttonCreateMember.UseVisualStyleBackColor = true;
             this.buttonCreateMember.Click += new System.EventHandler(this.buttonCreateMember_Click);
             // 
-            // buttonDeleteSelectedPlayer
+            // buttonRemoveSelectedPlayer
             // 
-            this.buttonDeleteSelectedPlayer.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonDeleteSelectedPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDeleteSelectedPlayer.Location = new System.Drawing.Point(389, 486);
-            this.buttonDeleteSelectedPlayer.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonDeleteSelectedPlayer.Name = "buttonDeleteSelectedPlayer";
-            this.buttonDeleteSelectedPlayer.Size = new System.Drawing.Size(160, 35);
-            this.buttonDeleteSelectedPlayer.TabIndex = 2;
-            this.buttonDeleteSelectedPlayer.Text = "Delete Selected";
-            this.buttonDeleteSelectedPlayer.UseVisualStyleBackColor = true;
+            this.buttonRemoveSelectedPlayer.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonRemoveSelectedPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRemoveSelectedPlayer.Location = new System.Drawing.Point(389, 486);
+            this.buttonRemoveSelectedPlayer.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonRemoveSelectedPlayer.Name = "buttonRemoveSelectedPlayer";
+            this.buttonRemoveSelectedPlayer.Size = new System.Drawing.Size(160, 35);
+            this.buttonRemoveSelectedPlayer.TabIndex = 2;
+            this.buttonRemoveSelectedPlayer.Text = "Remove Selected";
+            this.buttonRemoveSelectedPlayer.UseVisualStyleBackColor = true;
+            this.buttonRemoveSelectedPlayer.Click += new System.EventHandler(this.buttonRemoveSelectedPlayer_Click);
             // 
             // buttonCreateTeam
             // 
             this.buttonCreateTeam.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.layoutMain.SetColumnSpan(this.buttonCreateTeam, 2);
-            this.buttonCreateTeam.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCreateTeam.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCreateTeam.Location = new System.Drawing.Point(242, 534);
             this.buttonCreateTeam.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCreateTeam.Name = "buttonCreateTeam";
@@ -132,6 +133,7 @@
             this.buttonCreateTeam.TabIndex = 8;
             this.buttonCreateTeam.Text = "Create Team";
             this.buttonCreateTeam.UseVisualStyleBackColor = true;
+            this.buttonCreateTeam.Click += new System.EventHandler(this.buttonCreateTeam_Click);
             // 
             // listBoxTournamentPlayers
             // 
@@ -229,6 +231,7 @@
             this.buttonAddMember.TabIndex = 13;
             this.buttonAddMember.Text = "Add Member";
             this.buttonAddMember.UseVisualStyleBackColor = true;
+            this.buttonAddMember.Click += new System.EventHandler(this.buttonAddMember_Click);
             // 
             // groupBox1
             // 
@@ -380,7 +383,7 @@
         private System.Windows.Forms.TableLayoutPanel layoutMain;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonCreateMember;
-        private System.Windows.Forms.Button buttonDeleteSelectedPlayer;
+        private System.Windows.Forms.Button buttonRemoveSelectedPlayer;
         private System.Windows.Forms.Button buttonCreateTeam;
         private System.Windows.Forms.ListBox listBoxTournamentPlayers;
         private System.Windows.Forms.TableLayoutPanel layoutCreateTeam;
