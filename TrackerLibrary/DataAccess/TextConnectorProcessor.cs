@@ -95,7 +95,7 @@ namespace TrackerLibrary.DataAccess.TextHelpers
                 string[] cols = line.Split(',');
                 TeamModel tm = new TeamModel();
                 tm.Id = int.Parse(cols[0]);
-                tm.Name = cols[1];
+                tm.TeamName = cols[1];
 
                 string[] personIds = cols[2].Split('|');
                 foreach (string id in personIds)
@@ -114,7 +114,7 @@ namespace TrackerLibrary.DataAccess.TextHelpers
             List<string> lines = new List<string>();
             foreach (var tm in teams)
             {
-                string line = $"{ tm.Id },{ tm.Name }, {ConvertPeopleListToIdString(tm.TeamMembers)}";
+                string line = $"{ tm.Id },{ tm.TeamName }, {ConvertPeopleListToIdString(tm.TeamMembers)}";
                 lines.Add(line);
             }
             File.WriteAllLines(fileName.FullFilePath(), lines);

@@ -16,10 +16,10 @@ namespace UIForm
             Application.SetCompatibleTextRenderingDefault(false);
 
             // Initialzie the database connection
-            GlobalConfig.InitializeConnections(DatabaseType.TextFile);
+            GlobalConfig.InitializeConnections(DatabaseType.Sql);
 
             //Application.Run(new TournamentDashboard());
-            Application.Run(new TeamCreator());
+            Application.Run(new TournamentCreator());
         }
     }
 }

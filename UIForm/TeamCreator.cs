@@ -121,7 +121,7 @@ namespace UIForm
         private void buttonCreateTeam_Click(object sender, EventArgs e)
         {
             TeamModel t = new TeamModel();
-            t.Name = textBoxTeamName.Text;
+            t.TeamName = textBoxTeamName.Text;
             t.TeamMembers = selectedTeamMembers;
             GlobalConfig.Connection.CreateTeam(t);
                 

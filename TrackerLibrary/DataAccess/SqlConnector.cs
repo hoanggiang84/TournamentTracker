@@ -60,7 +60,7 @@ namespace TrackerLibrary.DataAccess
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString(db)))
             {
                 var p = new DynamicParameters();
-                p.Add("@TeamName", model.Name);
+                p.Add("@TeamName", model.TeamName);
                 p.Add("@id", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
                 
                 connection.Execute("dbo.spTeams_Insert", p, commandType: CommandType.StoredProcedure);
@@ -88,6 +88,23 @@ namespace TrackerLibrary.DataAccess
                 persons = connection.Query<PersonModel>("dbo.spPeople_GetAll").ToList();
             }
             return persons;
+        }
+
+        public List<TeamModel> GetAllTeams()
+        {
+            List<TeamModel> teams;
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString(db)))
+            {
+                teams = connection.Query<TeamModel>("dbo.spTeams_GetAll").ToList();
+
+                foreach (var t in teams)
+                {
+                    var p = new DynamicParameters();
+                    p.Add("@TeamId", t.Id);
+                    t.TeamMembers = connection.Query<PersonModel>("dbo.spTeamMembers_GetByTeam", p, commandType: CommandType.StoredProcedure).ToList();
+                }
+            }
+            return teams;
         }
     }
 }
