@@ -16,7 +16,7 @@ namespace UIForm
             Application.SetCompatibleTextRenderingDefault(false);
 
             // Initialzie the database connection
-            GlobalConfig.InitializeConnections(DatabaseType.Sql);
+            GlobalConfig.InitializeConnections(DatabaseType.TextFile);
 
             //Application.Run(new TournamentDashboard());
             Application.Run(new TeamCreator());

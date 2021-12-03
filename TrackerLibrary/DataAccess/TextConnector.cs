@@ -47,7 +47,7 @@ namespace TrackerLibrary.DataAccess
         public TeamModel CreateTeam(TeamModel model)
         {
             // Load text file and convert the text to List<TeamModel>
-            List<TeamModel> teams = TeamFile.FullFilePath().LoadFile().ConvertToTeamModels();
+            List<TeamModel> teams = TeamFile.FullFilePath().LoadFile().ConvertToTeamModels(PeopleFile);
             int currentId = 1;
             if (teams.Count > 0)
             {

@@ -18,7 +18,7 @@ namespace TrackerLibrary.DataAccess.TextHelpers
 
         public static List<string> LoadFile(this string file)
         {
-            if(!File.Exists(file))
+            if (!File.Exists(file))
             {
                 return new List<string>();
             }
@@ -47,7 +47,7 @@ namespace TrackerLibrary.DataAccess.TextHelpers
         public static void SaveToPrizeFile(this List<PrizeModel> prizes, string fileName)
         {
             List<string> lines = new List<string>();
-            foreach(var p in prizes)
+            foreach (var p in prizes)
             {
                 lines.Add($"{ p.Id },{ p.PlaceNumber },{ p.PlaceName },{ p.PrizeAmount },{ p.PrizePercentage }");
             }
@@ -83,33 +83,57 @@ namespace TrackerLibrary.DataAccess.TextHelpers
             File.WriteAllLines(fileName.FullFilePath(), lines);
         }
 
-        public static List<PersonModel> ConvertToTeamModels(this List<string> lines)
+        public static List<TeamModel> ConvertToTeamModels(this List<string> lines, string peopleFileName)
         {
-            List<PersonModel> personModels = new List<PersonModel>();
+            // id, team name, list of ids separated by pipe
+            // E.g: 2, Tim's team, 1|2|4
+            List<TeamModel> teams = new List<TeamModel>();
+            List<PersonModel> people = peopleFileName.FullFilePath().LoadFile().ConvertToPersonModels();
+
             foreach (var line in lines)
             {
                 string[] cols = line.Split(',');
-                PersonModel p = new PersonModel();
-                p.Id = int.Parse(cols[0]);
-                p.FirstName = cols[1];
-                p.LastName = cols[2];
-                p.EmailAddress = cols[3];
-                p.CellphoneNumber = cols[4];
+                TeamModel tm = new TeamModel();
+                tm.Id = int.Parse(cols[0]);
+                tm.Name = cols[1];
 
-                personModels.Add(p);
+                string[] personIds = cols[2].Split('|');
+                foreach (string id in personIds)
+                {
+                    tm.TeamMembers.Add(people.Where(p => p.Id == int.Parse(id)).First());
+                }
+
+                teams.Add(tm);
             }
 
-            return personModels;
+            return teams;
         }
 
         public static void SaveToTeamFile(this List<TeamModel> teams, string fileName)
         {
             List<string> lines = new List<string>();
-            foreach (var p in teams)
+            foreach (var tm in teams)
             {
-                //lines.Add($"{ p.Id },{ p.tea },{ p.LastName },{ p.EmailAddress },{ p.CellphoneNumber }");
+                string line = $"{ tm.Id },{ tm.Name }, {ConvertPeopleListToIdString(tm.TeamMembers)}";
+                lines.Add(line);
             }
             File.WriteAllLines(fileName.FullFilePath(), lines);
+        }
+
+        private static string ConvertPeopleListToIdString(List<PersonModel> people)
+        {
+            if (people.Count == 0)
+            {
+                return string.Empty;
+            }
+
+            string output = string.Empty;
+            foreach (var p in people)
+            {
+                output += $"{ p.Id }|";
+            }
+
+            return output.Substring(0, output.Length - 1);
         }
     }
 }
