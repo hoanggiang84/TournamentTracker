@@ -16,13 +16,15 @@ namespace UIForm
     public partial class TeamCreator : Form
     {
         private List<PersonModel> availableTeamMembers = GlobalConfig.Connection.GetAllPersons();
-        private List<PersonModel> selectedTeamMembers = new List<PersonModel>();  
+        private List<PersonModel> selectedTeamMembers = new List<PersonModel>();
+        private ITeamRequester callingForm;
 
-        public TeamCreator()
+        public TeamCreator(ITeamRequester caller)
         {
             InitializeComponent();
             //CreateSampleData();
             wireUpLists();
+            callingForm = caller;
         }
 
         private void CreateSampleData()
@@ -70,7 +72,7 @@ namespace UIForm
 
         private bool ValidateForm()
         {
-            // TODO - Add validation for create member method
+            // Add validation for create member method
             if (string.IsNullOrWhiteSpace(textBoxNewMemberFirstName.Text))
             {
                 return false;
@@ -96,34 +98,36 @@ namespace UIForm
 
         private void buttonAddMember_Click(object sender, EventArgs e)
         {
-            PersonModel p = (PersonModel)comboBoxTeamMember.SelectedItem;
+            PersonModel model = (PersonModel)comboBoxTeamMember.SelectedItem;
             
-            if (p != null)
+            if (model != null)
             {
-                availableTeamMembers.Remove(p);
-                selectedTeamMembers.Add(p);
+                availableTeamMembers.Remove(model);
+                selectedTeamMembers.Add(model);
                 wireUpLists(); 
             }
         }
 
         private void buttonRemoveSelectedPlayer_Click(object sender, EventArgs e)
         {
-            PersonModel p = (PersonModel)listBoxTournamentPlayers.SelectedItem;
+            PersonModel model = (PersonModel)listBoxTournamentPlayers.SelectedItem;
 
-            if (p != null)
+            if (model != null)
             {
-                availableTeamMembers.Add(p);
-                selectedTeamMembers.Remove(p);
+                availableTeamMembers.Add(model);
+                selectedTeamMembers.Remove(model);
                 wireUpLists(); 
             }
         }
 
         private void buttonCreateTeam_Click(object sender, EventArgs e)
         {
-            TeamModel t = new TeamModel();
-            t.TeamName = textBoxTeamName.Text;
-            t.TeamMembers = selectedTeamMembers;
-            GlobalConfig.Connection.CreateTeam(t);
+            TeamModel model = new TeamModel();
+            model.TeamName = textBoxTeamName.Text;
+            model.TeamMembers = selectedTeamMembers;
+            GlobalConfig.Connection.CreateTeam(model);
+            callingForm.TeamComplete(model);
+            this.Close();
                 
         }
     }

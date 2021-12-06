@@ -14,9 +14,12 @@ namespace UIForm
 {
     public partial class PrizeCreator : Form
     {
-        public PrizeCreator()
+        IPrizeRequester callingForm;
+        public PrizeCreator(IPrizeRequester caller)
         {
             InitializeComponent();
+
+            callingForm = caller;
         }
 
         private void buttonCreatePrize_Click(object sender, EventArgs e)
@@ -35,6 +38,9 @@ namespace UIForm
                 textBoxPlaceNumber.Clear();
                 textBoxPrizeAmount.Text = "0.0";
                 textBoxPrizePercentage.Text = "0.0";
+
+                callingForm.PrizeComplete(model);
+                this.Close();
             }
             else
             {

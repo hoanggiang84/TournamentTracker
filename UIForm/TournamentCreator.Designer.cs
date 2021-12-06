@@ -36,7 +36,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxEntryFee = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.linkLabelCreateNewTeam = new System.Windows.Forms.LinkLabel();
             this.comboBoxSelectTeam = new System.Windows.Forms.ComboBox();
             this.buttonAddTeam = new System.Windows.Forms.Button();
             this.buttonCreatePrize = new System.Windows.Forms.Button();
@@ -59,7 +59,7 @@
             this.layoutMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.layoutMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.30875F));
             this.layoutMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.69125F));
-            this.layoutMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.layoutMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.layoutMain.Controls.Add(this.labelCreateTournament, 1, 1);
             this.layoutMain.Controls.Add(this.layoutLeft, 1, 2);
             this.layoutMain.Controls.Add(this.layoutRight, 2, 2);
@@ -99,7 +99,7 @@
             this.layoutLeft.Controls.Add(this.label2, 0, 2);
             this.layoutLeft.Controls.Add(this.textBoxEntryFee, 1, 2);
             this.layoutLeft.Controls.Add(this.label3, 0, 3);
-            this.layoutLeft.Controls.Add(this.linkLabel1, 1, 3);
+            this.layoutLeft.Controls.Add(this.linkLabelCreateNewTeam, 1, 3);
             this.layoutLeft.Controls.Add(this.comboBoxSelectTeam, 0, 4);
             this.layoutLeft.Controls.Add(this.buttonAddTeam, 0, 5);
             this.layoutLeft.Controls.Add(this.buttonCreatePrize, 0, 6);
@@ -176,18 +176,19 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Select Team";
             // 
-            // linkLabel1
+            // linkLabelCreateNewTeam
             // 
-            this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(163, 200);
-            this.linkLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(103, 24);
-            this.linkLabel1.TabIndex = 5;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "create new";
+            this.linkLabelCreateNewTeam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.linkLabelCreateNewTeam.AutoSize = true;
+            this.linkLabelCreateNewTeam.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabelCreateNewTeam.Location = new System.Drawing.Point(163, 200);
+            this.linkLabelCreateNewTeam.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.linkLabelCreateNewTeam.Name = "linkLabelCreateNewTeam";
+            this.linkLabelCreateNewTeam.Size = new System.Drawing.Size(103, 24);
+            this.linkLabelCreateNewTeam.TabIndex = 5;
+            this.linkLabelCreateNewTeam.TabStop = true;
+            this.linkLabelCreateNewTeam.Text = "create new";
+            this.linkLabelCreateNewTeam.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelCreateNewTeam_LinkClicked);
             // 
             // comboBoxSelectTeam
             // 
@@ -195,7 +196,7 @@
             this.layoutLeft.SetColumnSpan(this.comboBoxSelectTeam, 2);
             this.comboBoxSelectTeam.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxSelectTeam.FormattingEnabled = true;
-            this.comboBoxSelectTeam.Location = new System.Drawing.Point(4, 232);
+            this.comboBoxSelectTeam.Location = new System.Drawing.Point(4, 233);
             this.comboBoxSelectTeam.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxSelectTeam.Name = "comboBoxSelectTeam";
             this.comboBoxSelectTeam.Size = new System.Drawing.Size(299, 30);
@@ -227,6 +228,7 @@
             this.buttonCreatePrize.TabIndex = 8;
             this.buttonCreatePrize.Text = "Create Prize";
             this.buttonCreatePrize.UseVisualStyleBackColor = true;
+            this.buttonCreatePrize.Click += new System.EventHandler(this.buttonCreatePrize_Click);
             // 
             // layoutRight
             // 
@@ -248,7 +250,7 @@
             this.layoutRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.layoutRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
             this.layoutRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.layoutRight.Size = new System.Drawing.Size(459, 453);
+            this.layoutRight.Size = new System.Drawing.Size(458, 453);
             this.layoutRight.TabIndex = 2;
             // 
             // label4
@@ -280,7 +282,7 @@
             this.buttonRemoveTeam.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonRemoveTeam.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRemoveTeam.Location = new System.Drawing.Point(325, 41);
+            this.buttonRemoveTeam.Location = new System.Drawing.Point(324, 41);
             this.buttonRemoveTeam.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRemoveTeam.Name = "buttonRemoveTeam";
             this.buttonRemoveTeam.Size = new System.Drawing.Size(130, 62);
@@ -294,13 +296,14 @@
             this.buttonRemovePrize.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonRemovePrize.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRemovePrize.Location = new System.Drawing.Point(325, 267);
+            this.buttonRemovePrize.Location = new System.Drawing.Point(324, 267);
             this.buttonRemovePrize.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRemovePrize.Name = "buttonRemovePrize";
             this.buttonRemovePrize.Size = new System.Drawing.Size(130, 62);
             this.buttonRemovePrize.TabIndex = 3;
             this.buttonRemovePrize.Text = "Remove Selected";
             this.buttonRemovePrize.UseVisualStyleBackColor = true;
+            this.buttonRemovePrize.Click += new System.EventHandler(this.buttonRemovePrize_Click);
             // 
             // listBoxTournamentTeams
             // 
@@ -311,7 +314,7 @@
             this.listBoxTournamentTeams.Margin = new System.Windows.Forms.Padding(4);
             this.listBoxTournamentTeams.Name = "listBoxTournamentTeams";
             this.listBoxTournamentTeams.ScrollAlwaysVisible = true;
-            this.listBoxTournamentTeams.Size = new System.Drawing.Size(313, 181);
+            this.listBoxTournamentTeams.Size = new System.Drawing.Size(312, 181);
             this.listBoxTournamentTeams.TabIndex = 4;
             // 
             // listBoxPrizes
@@ -323,7 +326,7 @@
             this.listBoxPrizes.Margin = new System.Windows.Forms.Padding(4);
             this.listBoxPrizes.Name = "listBoxPrizes";
             this.listBoxPrizes.ScrollAlwaysVisible = true;
-            this.listBoxPrizes.Size = new System.Drawing.Size(313, 182);
+            this.listBoxPrizes.Size = new System.Drawing.Size(312, 182);
             this.listBoxPrizes.TabIndex = 5;
             // 
             // buttonCreateTournament
@@ -331,7 +334,7 @@
             this.buttonCreateTournament.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.layoutMain.SetColumnSpan(this.buttonCreateTournament, 2);
             this.buttonCreateTournament.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCreateTournament.Location = new System.Drawing.Point(318, 553);
+            this.buttonCreateTournament.Location = new System.Drawing.Point(317, 553);
             this.buttonCreateTournament.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCreateTournament.Name = "buttonCreateTournament";
             this.buttonCreateTournament.Size = new System.Drawing.Size(200, 40);
@@ -369,7 +372,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxEntryFee;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel linkLabelCreateNewTeam;
         private System.Windows.Forms.ComboBox comboBoxSelectTeam;
         private System.Windows.Forms.Button buttonAddTeam;
         private System.Windows.Forms.Button buttonCreatePrize;
