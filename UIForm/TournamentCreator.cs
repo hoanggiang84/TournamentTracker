@@ -97,5 +97,32 @@ namespace UIForm
             }
                  
         }
+
+        private void buttonCreateTournament_Click(object sender, EventArgs e)
+        {
+            // Create tournament model
+            bool validEntryFee = decimal.TryParse(textBoxEntryFee.Text, out decimal entryFee);
+            if (validEntryFee == false)
+            {
+                MessageBox.Show("You need to enter a valid entry fee.", "Invalid Fee", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            TournamentModel tm  = new TournamentModel();
+            tm.TournamentName = textBoxTournamentName.Text;
+            tm.EntryFee = entryFee;
+
+            tm.Prizes.AddRange(selectedPrizes);
+            tm.EnteredTeams.AddRange(selectedTeams);
+
+            // TODO - Create our matchups
+
+            // Create Tournament entry
+            // Create all the prize entries
+            // Create all team entries
+            GlobalConfig.Connection.CreateTournament(tm);
+
+            
+        }
     }
 }

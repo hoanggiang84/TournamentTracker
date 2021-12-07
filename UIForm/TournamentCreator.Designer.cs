@@ -59,7 +59,7 @@
             this.layoutMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.layoutMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.30875F));
             this.layoutMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.69125F));
-            this.layoutMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.layoutMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 33F));
             this.layoutMain.Controls.Add(this.labelCreateTournament, 1, 1);
             this.layoutMain.Controls.Add(this.layoutLeft, 1, 2);
             this.layoutMain.Controls.Add(this.layoutRight, 2, 2);
@@ -115,7 +115,7 @@
             this.layoutLeft.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
             this.layoutLeft.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
             this.layoutLeft.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.layoutLeft.Size = new System.Drawing.Size(307, 453);
+            this.layoutLeft.Size = new System.Drawing.Size(306, 453);
             this.layoutLeft.TabIndex = 1;
             // 
             // label1
@@ -139,7 +139,7 @@
             this.textBoxTournamentName.Location = new System.Drawing.Point(4, 47);
             this.textBoxTournamentName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxTournamentName.Name = "textBoxTournamentName";
-            this.textBoxTournamentName.Size = new System.Drawing.Size(299, 28);
+            this.textBoxTournamentName.Size = new System.Drawing.Size(298, 28);
             this.textBoxTournamentName.TabIndex = 1;
             // 
             // label2
@@ -161,7 +161,7 @@
             this.textBoxEntryFee.Location = new System.Drawing.Point(163, 96);
             this.textBoxEntryFee.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxEntryFee.Name = "textBoxEntryFee";
-            this.textBoxEntryFee.Size = new System.Drawing.Size(140, 28);
+            this.textBoxEntryFee.Size = new System.Drawing.Size(139, 28);
             this.textBoxEntryFee.TabIndex = 3;
             // 
             // label3
@@ -196,10 +196,10 @@
             this.layoutLeft.SetColumnSpan(this.comboBoxSelectTeam, 2);
             this.comboBoxSelectTeam.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxSelectTeam.FormattingEnabled = true;
-            this.comboBoxSelectTeam.Location = new System.Drawing.Point(4, 233);
+            this.comboBoxSelectTeam.Location = new System.Drawing.Point(4, 232);
             this.comboBoxSelectTeam.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxSelectTeam.Name = "comboBoxSelectTeam";
-            this.comboBoxSelectTeam.Size = new System.Drawing.Size(299, 30);
+            this.comboBoxSelectTeam.Size = new System.Drawing.Size(298, 30);
             this.comboBoxSelectTeam.TabIndex = 6;
             // 
             // buttonAddTeam
@@ -242,7 +242,7 @@
             this.layoutRight.Controls.Add(this.listBoxTournamentTeams, 0, 1);
             this.layoutRight.Controls.Add(this.listBoxPrizes, 0, 3);
             this.layoutRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutRight.Location = new System.Drawing.Point(346, 91);
+            this.layoutRight.Location = new System.Drawing.Point(345, 91);
             this.layoutRight.Margin = new System.Windows.Forms.Padding(4);
             this.layoutRight.Name = "layoutRight";
             this.layoutRight.RowCount = 4;
@@ -341,6 +341,7 @@
             this.buttonCreateTournament.TabIndex = 3;
             this.buttonCreateTournament.Text = "Create Tournament";
             this.buttonCreateTournament.UseVisualStyleBackColor = true;
+            this.buttonCreateTournament.Click += new System.EventHandler(this.buttonCreateTournament_Click);
             // 
             // TournamentCreator
             // 
