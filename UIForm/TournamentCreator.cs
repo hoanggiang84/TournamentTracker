@@ -115,7 +115,8 @@ namespace UIForm
             tm.Prizes.AddRange(selectedPrizes);
             tm.EnteredTeams.AddRange(selectedTeams);
 
-            // TODO - Create our matchups
+            // Create our matchups
+            TournamentLogic.CreateRounds(tm);
 
             // Create Tournament entry
             // Create all the prize entries
