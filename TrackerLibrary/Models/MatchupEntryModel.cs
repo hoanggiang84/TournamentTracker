@@ -2,6 +2,8 @@
 {
     public class MatchupEntryModel
     {
+        public int Id { get; set; }
+
         public TeamModel TeamCompeting { get; set; }
         public double Score { get; set; }
 
