@@ -67,7 +67,7 @@ namespace TrackerLibrary.DataAccess
             List<TournamentModel> tournaments = 
                 TournamentFile
                 .FullFilePath().LoadFile()
-                .ConvertToTournamentModels(TeamFile, PeopleFile, PrizesFile);
+                .ConvertToTournamentModels(TeamFile, PeopleFile, PrizesFile, MatchupFile);
 
             int currentId = 1;
             if (tournaments.Count > 0)
